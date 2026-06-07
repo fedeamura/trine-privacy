@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Política de privacidad de Trine Floating Web Browser">
+  <title>Política de privacidad — Trine</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface-2: #243044;
+      --text: #e8edf4;
+      --muted: #9aa8bc;
+      --accent: #5b8def;
+      --accent-soft: rgba(91, 141, 239, 0.14);
+      --border: rgba(255, 255, 255, 0.08);
+      --max-width: 44rem;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(91, 141, 239, 0.18), transparent),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .wrap {
+      max-width: calc(var(--max-width) + 3rem);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .lang-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .lang-btn:hover {
+      background: var(--surface-2);
+    }
+
+    .lang-btn.active {
+      background: var(--accent-soft);
+      border-color: rgba(91, 141, 239, 0.45);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    main {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      main {
+        padding: 2.25rem 2rem;
+      }
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      margin: 1.25rem 0 0.5rem;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+    }
+
+    p {
+      margin: 0 0 0.85rem;
+    }
+
+    ul {
+      margin: 0 0 0.85rem;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    li strong, p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin: 0.85rem 0;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0.85rem 0;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--text);
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Trine Floating Web Browser</span>
+      <h1 data-i18n="title">Política de privacidad</h1>
+      <p class="subtitle" data-i18n="subtitle">Navegador web flotante para Android</p>
+      <div class="meta">
+        <span data-i18n="effective">Vigente desde: 6 de junio de 2026</span>
+        <span data-i18n="package">Paquete: amura.federico.trine</span>
+      </div>
+    </header>
+
+    <div class="toolbar" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">Español</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+    </div>
+
+    <main>
+      <!-- Spanish -->
+      <div id="content-es" lang="es">
+        <section>
+          <h2>1. Introducción</h2>
+          <p>
+            Esta política describe cómo <strong>Trine Floating Web Browser</strong> («Trine», «la app» o «nosotros»)
+            trata la información cuando la usás en Android. Trine es un navegador web que permite abrir páginas en
+            burbujas flotantes sobre otras aplicaciones.
+          </p>
+          <p>
+            Al usar Trine, aceptás esta política. Si no estás de acuerdo, no uses la aplicación.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Responsable del tratamiento</h2>
+          <p>
+            Desarrollador: <strong>Federico Amura</strong><br>
+            Contacto: <a href="https://github.com/fedeamura/trine_android/issues">GitHub Issues del proyecto</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Resumen</h2>
+          <div class="card">
+            <p><strong>Trine no requiere cuenta ni inicio de sesión.</strong> La mayor parte de los datos de navegación
+            (historial, favoritos, descargas y preferencias) se guardan solo en tu dispositivo.</p>
+            <p>En versiones de producción, la app puede enviar datos de uso anónimos, informes de fallos y datos
+            relacionados con publicidad e compras a servicios de terceros (Google Firebase y Google AdMob), según se
+            detalla más abajo.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>4. Datos que se almacenan en tu dispositivo</h2>
+          <p>Trine guarda localmente, en una base de datos interna y en el almacenamiento de la app, información
+          necesaria para su funcionamiento:</p>
+          <ul>
+            <li><strong>Historial de navegación:</strong> URLs, títulos de página y fechas de visita (por burbuja o general).</li>
+            <li><strong>Favoritos y páginas frecuentes:</strong> URLs, títulos y contadores de visita.</li>
+            <li><strong>Descargas:</strong> metadatos como URL, nombre de archivo, tipo MIME, estado y ruta de destino.</li>
+            <li><strong>Sesiones de burbujas:</strong> estado de las burbujas abiertas para restaurarlas.</li>
+            <li><strong>Preferencias:</strong> tema, idioma, opciones de descarga, seguridad, personalización y estado Premium.</li>
+            <li><strong>Archivos descargados o guardados:</strong> PDF o imágenes que guardes con la función «Guardar página».</li>
+            <li><strong>Datos del navegador (WebView):</strong> cookies, caché y almacenamiento local de los sitios que visites,
+            gestionados por el motor de navegación del sistema.</li>
+          </ul>
+          <p>
+            Estos datos <strong>no se suben a servidores propios de Trine</strong>. Permanecen en tu teléfono hasta que
+            los borres desde la app, desinstales Trine o restaures el dispositivo.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Modo incógnito</h2>
+          <p>
+            Las burbujas en modo incógnito <strong>no registran historial, favoritos ni páginas frecuentes</strong> en la
+            base de datos local. Podés configurar que las burbujas incógnito se bloqueen al minimizar; en ese caso, el
+            desbloqueo usa la autenticación biométrica o de dispositivo que ofrezca Android (datos procesados localmente
+            por el sistema, no por Trine).
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Datos enviados a terceros</h2>
+
+          <h3>6.1 Firebase Analytics (Google)</h3>
+          <p>
+            En compilaciones de producción (no en modo depuración), Trine puede registrar eventos de uso anónimos para
+            entender cómo se usa la app y mejorarla. La recolección puede desactivarse remotamente mediante Firebase
+            Remote Config.
+          </p>
+          <p>Entre otros, se registran:</p>
+          <ul>
+            <li>Pantallas visitadas dentro de la app.</li>
+            <li>Acciones de interfaz (por ejemplo, abrir o cerrar burbujas, descargas, configuración).</li>
+            <li>Eventos del servicio en segundo plano (inicio, detención, errores).</li>
+            <li>Propiedades de usuario anónimas: tema, idioma del dispositivo, si completaste el onboarding, cantidad
+            aproximada de burbujas activas, preferencias de descarga y si tenés Trine Pro.</li>
+            <li>En errores de carga de página: mensaje de error y, en algunos casos, el <strong>dominio</strong> (host)
+            de la URL, no la URL completa ni el contenido de la página.</li>
+          </ul>
+          <p>
+            <strong>No enviamos tu historial de navegación completo ni el contenido de las páginas que visitás</strong>
+            a Firebase Analytics.
+          </p>
+          <p>Política de Google: <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></p>
+
+          <h3>6.2 Firebase Crashlytics (Google)</h3>
+          <p>
+            Si la app falla, Crashlytics puede recibir informes de error (trazas, modelo de dispositivo, versión de
+            Android, versión de la app y datos técnicos similares) para diagnosticar problemas. No incluye
+            intencionalmente contenido de las páginas web que navegues.
+          </p>
+
+          <h3>6.3 Firebase Remote Config (Google)</h3>
+          <p>
+            La app descarga parámetros de configuración remotos (por ejemplo, límites de la versión gratuita o
+            activación de analíticas) desde los servidores de Google. No se envía información personal identificable en
+            esta consulta más allá de lo que Google asocia al identificador de instalación de Firebase.
+          </p>
+
+          <h3>6.4 Google AdMob (publicidad)</h3>
+          <p>
+            Si no tenés Trine Pro, la app puede mostrar anuncios (banners adaptativos y anuncios con recompensa para
+            desbloquear funciones). AdMob y sus socios pueden recopilar identificadores publicitarios, datos de
+            interacción con anuncios e información del dispositivo conforme a sus propias políticas.
+          </p>
+          <p>
+            Podés limitar la publicidad personalizada desde los ajustes de privacidad de Android y, si corresponde,
+            desde <a href="https://adssettings.google.com" rel="noopener">Configuración de anuncios de Google</a>.
+          </p>
+
+          <h3>6.5 Google Play Billing (compras in-app)</h3>
+          <p>
+            La compra de <strong>Trine Pro</strong> se procesa íntegramente por Google Play. Trine solo recibe la
+            confirmación de que la compra es válida; no almacenamos datos de pago ni números de tarjeta.
+          </p>
+          <p>Política de Google Play: <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldl=en_GB&amp;ldo=0&amp;ldt=privacynotice" rel="noopener">Aviso de privacidad de pagos</a></p>
+        </section>
+
+        <section>
+          <h2>7. Permisos de Android</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Permiso</th>
+                <th>Para qué se usa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Internet</td>
+                <td>Cargar páginas web, descargas, analíticas, anuncios y configuración remota.</td>
+              </tr>
+              <tr>
+                <td>Mostrar sobre otras apps (overlay)</td>
+                <td>Mostrar las burbujas flotantes sobre otras aplicaciones. Esencial para Trine.</td>
+              </tr>
+              <tr>
+                <td>Servicio en primer plano</td>
+                <td>Mantener activas las burbujas y las descargas mientras usás otras apps.</td>
+              </tr>
+              <tr>
+                <td>Notificaciones</td>
+                <td>Informarte sobre descargas completadas y el estado del servicio de burbujas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>8. Sitios web de terceros</h2>
+          <p>
+            Al navegar con Trine visitás sitios que no controlamos. Cada sitio puede recopilar datos, usar cookies y
+            aplicar sus propias políticas de privacidad. Trine no es responsable de las prácticas de privacidad de
+            sitios externos.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Copias de seguridad y transferencia de dispositivo</h2>
+          <p>
+            Trine tiene habilitada la copia de seguridad de Android (<code>allowBackup</code>). Dependiendo de la
+            configuración de tu cuenta de Google y del fabricante, parte de los datos de la app podría incluirse en
+            copias de seguridad o transferencias entre dispositivos. Consultá la configuración de tu teléfono para
+            gestionarlas.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Conservación y eliminación</h2>
+          <ul>
+            <li>Podés borrar historial, favoritos y descargas desde los menús de la app.</li>
+            <li>Desinstalar Trine elimina los datos locales de la aplicación en el dispositivo.</li>
+            <li>Los datos en servicios de Google (analíticas, fallos, anuncios) se rigen por las políticas y herramientas de retención de Google.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>11. Menores de edad</h2>
+          <p>
+            Trine no está dirigida a menores de 13 años y no recopilamos deliberadamente información personal de
+            niños. Si creés que un menor nos proporcionó datos, contactanos para que podamos ayudarte a eliminarlos.
+          </p>
+        </section>
+
+        <section>
+          <h2>12. Seguridad</h2>
+          <p>
+            Aplicamos medidas razonables para proteger los datos en el dispositivo. Ningún método de transmisión o
+            almacenamiento es 100 % seguro; usá bloqueo de pantalla y autenticación biométrica del sistema para
+            proteger el acceso a tu teléfono.
+          </p>
+        </section>
+
+        <section>
+          <h2>13. Tus derechos</h2>
+          <p>
+            Según tu jurisdicción (por ejemplo, GDPR o leyes locales de protección de datos), podés tener derecho a
+            acceder, corregir o eliminar datos personales. Como la mayoría de los datos están en tu dispositivo,
+            muchas solicitudes pueden resolverse borrándolos en la app o desinstalándola. Para consultas adicionales,
+            escribinos por <a href="https://github.com/fedeamura/trine_android/issues">GitHub Issues</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>14. Cambios a esta política</h2>
+          <p>
+            Podemos actualizar esta política para reflejar cambios en la app o requisitos legales. Publicaremos la
+            versión vigente en esta página e indicaremos la fecha de entrada en vigor al inicio del documento.
+          </p>
+        </section>
+
+        <section>
+          <h2>15. Contacto</h2>
+          <p>
+            Para preguntas sobre privacidad: <a href="https://github.com/fedeamura/trine_android/issues">abrir un issue en GitHub</a>.
+          </p>
+        </section>
+      </div>
+
+      <!-- English -->
+      <div id="content-en" class="hidden" lang="en">
+        <section>
+          <h2>1. Introduction</h2>
+          <p>
+            This policy explains how <strong>Trine Floating Web Browser</strong> (“Trine”, “the app”, or “we”) handles
+            information when you use it on Android. Trine is a web browser that lets you open pages in floating bubbles
+            over other apps.
+          </p>
+          <p>
+            By using Trine, you agree to this policy. If you do not agree, please do not use the application.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Data controller</h2>
+          <p>
+            Developer: <strong>Federico Amura</strong><br>
+            Contact: <a href="https://github.com/fedeamura/trine_android/issues">Project GitHub Issues</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Summary</h2>
+          <div class="card">
+            <p><strong>Trine does not require an account or sign-in.</strong> Most browsing-related data (history,
+            favorites, downloads, and preferences) is stored only on your device.</p>
+            <p>In production builds, the app may send anonymous usage data, crash reports, and advertising- and
+            purchase-related data to third-party services (Google Firebase and Google AdMob), as described below.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>4. Data stored on your device</h2>
+          <p>Trine stores the following locally, in an internal database and app storage, to operate:</p>
+          <ul>
+            <li><strong>Browsing history:</strong> URLs, page titles, and visit dates (per bubble or general).</li>
+            <li><strong>Favorites and frequent pages:</strong> URLs, titles, and visit counts.</li>
+            <li><strong>Downloads:</strong> metadata such as URL, file name, MIME type, status, and destination path.</li>
+            <li><strong>Bubble sessions:</strong> state of open bubbles for restoration.</li>
+            <li><strong>Preferences:</strong> theme, language, download options, security, customization, and Premium status.</li>
+            <li><strong>Downloaded or saved files:</strong> PDFs or images you save with “Save page”.</li>
+            <li><strong>Browser (WebView) data:</strong> cookies, cache, and site local storage for pages you visit,
+            managed by the system browser engine.</li>
+          </ul>
+          <p>
+            This data is <strong>not uploaded to Trine-owned servers</strong>. It remains on your phone until you delete
+            it in the app, uninstall Trine, or reset your device.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Incognito mode</h2>
+          <p>
+            Incognito bubbles <strong>do not record history, favorites, or frequent pages</strong> in the local database.
+            You can require incognito bubbles to lock when minimized; unlocking then uses biometric or device
+            authentication provided by Android (processed locally by the system, not by Trine).
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Data sent to third parties</h2>
+
+          <h3>6.1 Firebase Analytics (Google)</h3>
+          <p>
+            In production builds (not in debug mode), Trine may log anonymous usage events to understand how the app is
+            used and improve it. Collection can be disabled remotely via Firebase Remote Config.
+          </p>
+          <p>This may include:</p>
+          <ul>
+            <li>In-app screens viewed.</li>
+            <li>UI actions (e.g., opening or closing bubbles, downloads, settings).</li>
+            <li>Background service events (start, stop, errors).</li>
+            <li>Anonymous user properties: theme, device language, onboarding completion, approximate active bubble
+            count, download preferences, and whether you have Trine Pro.</li>
+            <li>On page load failures: error message and, in some cases, the URL <strong>host</strong> only—not the full
+            URL or page content.</li>
+          </ul>
+          <p>
+            <strong>We do not send your full browsing history or page content</strong> to Firebase Analytics.
+          </p>
+          <p>Google policy: <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></p>
+
+          <h3>6.2 Firebase Crashlytics (Google)</h3>
+          <p>
+            If the app crashes, Crashlytics may receive error reports (stack traces, device model, Android version, app
+            version, and similar technical data) to diagnose issues. It does not intentionally include content from web
+            pages you browse.
+          </p>
+
+          <h3>6.3 Firebase Remote Config (Google)</h3>
+          <p>
+            The app fetches remote configuration parameters (e.g., free-tier limits or analytics toggles) from Google
+            servers. No personally identifiable information is intentionally sent beyond what Google associates with the
+            Firebase installation identifier.
+          </p>
+
+          <h3>6.4 Google AdMob (advertising)</h3>
+          <p>
+            Without Trine Pro, the app may show ads (adaptive banners and rewarded ads to unlock features). AdMob and
+            its partners may collect advertising identifiers, ad interaction data, and device information under their own
+            policies.
+          </p>
+          <p>
+            You can limit personalized ads in Android privacy settings and, where applicable, via
+            <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>.
+          </p>
+
+          <h3>6.5 Google Play Billing (in-app purchases)</h3>
+          <p>
+            <strong>Trine Pro</strong> purchases are processed entirely by Google Play. Trine only receives confirmation
+            that a purchase is valid; we do not store payment details or card numbers.
+          </p>
+          <p>Google Play policy: <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldl=en_GB&amp;ldo=0&amp;ldt=privacynotice" rel="noopener">Payments privacy notice</a></p>
+        </section>
+
+        <section>
+          <h2>7. Android permissions</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Permission</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Internet</td>
+                <td>Load web pages, downloads, analytics, ads, and remote configuration.</td>
+              </tr>
+              <tr>
+                <td>Display over other apps (overlay)</td>
+                <td>Show floating bubbles over other applications. Essential for Trine.</td>
+              </tr>
+              <tr>
+                <td>Foreground service</td>
+                <td>Keep bubbles and downloads active while you use other apps.</td>
+              </tr>
+              <tr>
+                <td>Notifications</td>
+                <td>Notify you about completed downloads and bubble service status.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>8. Third-party websites</h2>
+          <p>
+            When you browse with Trine, you visit sites we do not control. Each site may collect data, use cookies, and
+            apply its own privacy policy. Trine is not responsible for third-party sites’ privacy practices.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Backup and device transfer</h2>
+          <p>
+            Trine has Android backup enabled (<code>allowBackup</code>). Depending on your Google account and
+            manufacturer settings, some app data may be included in backups or device-to-device transfers. Check your
+            phone settings to manage this.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Retention and deletion</h2>
+          <ul>
+            <li>You can delete history, favorites, and downloads from in-app menus.</li>
+            <li>Uninstalling Trine removes local app data on the device.</li>
+            <li>Data held by Google services (analytics, crashes, ads) is governed by Google’s policies and retention tools.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>11. Children’s privacy</h2>
+          <p>
+            Trine is not directed at children under 13, and we do not knowingly collect personal information from
+            children. If you believe a child provided data, contact us so we can help remove it.
+          </p>
+        </section>
+
+        <section>
+          <h2>12. Security</h2>
+          <p>
+            We use reasonable measures to protect on-device data. No method of transmission or storage is 100% secure;
+            use your device’s screen lock and biometric authentication to protect access to your phone.
+          </p>
+        </section>
+
+        <section>
+          <h2>13. Your rights</h2>
+          <p>
+            Depending on your jurisdiction (e.g., GDPR or local data protection laws), you may have rights to access,
+            correct, or delete personal data. Because most data stays on your device, many requests can be fulfilled by
+            deleting data in the app or uninstalling it. For further questions, reach us via
+            <a href="https://github.com/fedeamura/trine_android/issues">GitHub Issues</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>14. Changes to this policy</h2>
+          <p>
+            We may update this policy to reflect app changes or legal requirements. We will publish the current version on
+            this page and indicate the effective date at the top.
+          </p>
+        </section>
+
+        <section>
+          <h2>15. Contact</h2>
+          <p>
+            Privacy questions: <a href="https://github.com/fedeamura/trine_android/issues">open a GitHub issue</a>.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Federico Amura · Trine Floating Web Browser</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll(".lang-btn");
+      var es = document.getElementById("content-es");
+      var en = document.getElementById("content-en");
+      var title = document.querySelector("h1");
+      var subtitle = document.querySelector(".subtitle");
+      var meta = document.querySelectorAll(".meta span");
+
+      var i18n = {
+        es: {
+          title: "Política de privacidad",
+          subtitle: "Navegador web flotante para Android",
+          effective: "Vigente desde: 6 de junio de 2026",
+          package: "Paquete: amura.federico.trine"
+        },
+        en: {
+          title: "Privacy Policy",
+          subtitle: "Floating web browser for Android",
+          effective: "Effective: June 6, 2026",
+          package: "Package: amura.federico.trine"
+        }
+      };
+
+      function setLang(lang) {
+        document.documentElement.lang = lang;
+        var t = i18n[lang];
+        title.textContent = t.title;
+        subtitle.textContent = t.subtitle;
+        meta[0].textContent = t.effective;
+        meta[1].textContent = t.package;
+        es.classList.toggle("hidden", lang !== "es");
+        en.classList.toggle("hidden", lang !== "en");
+        buttons.forEach(function (btn) {
+          var active = btn.dataset.lang === lang;
+          btn.classList.toggle("active", active);
+          btn.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        document.title = lang === "es"
+          ? "Política de privacidad — Trine"
+          : "Privacy Policy — Trine";
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setLang(btn.dataset.lang);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
